@@ -6,8 +6,8 @@ function App() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
-  //const API = "http://localhost:5000/api/tasks";//
-  const API = "http://localhost:5000/api/tasks";
+  
+const API = "https://task-tracker-mern-vhst.onrender.com/api/tasks";
 
   // GET TASKS
   const fetchTasks = async () => {
@@ -20,18 +20,35 @@ function App() {
   }, []);
 
   // ADD TASK
+  // const addTask = async () => {
+  //   if (!title) return alert("Title required");
+
+  //   await axios.post(API, {
+  //     title,
+  //     description,
+  //   });
+
+  //   setTitle("");
+  //   setDescription("");
+  //   fetchTasks();
+  // };
   const addTask = async () => {
-    if (!title) return alert("Title required");
+  console.log("Button clicked");
 
-    await axios.post(API, {
-      title,
-      description,
-    });
+  if (!title) {
+    alert("Title required");
+    return;
+  }
 
-    setTitle("");
-    setDescription("");
-    fetchTasks();
-  };
+  await axios.post(API, {
+    title,
+    description,
+  });
+
+  setTitle("");
+  setDescription("");
+  fetchTasks();
+};
 
   // DELETE TASK
   const deleteTask = async (id) => {
