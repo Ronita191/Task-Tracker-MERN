@@ -16,7 +16,7 @@ app.use(express.json());
 
 // routes
 const taskRoutes = require("./routes/taskRoutes");
-app.use("/api", taskRoutes);
+app.use("/api/tasks", taskRoutes);
 
 app.get("/", (req, res) => {
   res.send("Backend is running 🚀");

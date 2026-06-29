@@ -7,7 +7,7 @@ function App() {
   const [description, setDescription] = useState("");
 
   //const API = "http://localhost:5000/api/tasks";//
-  const API = import.meta.env.VITE_API_URL;
+  const API = "http://localhost:5000/api/tasks";
 
   // GET TASKS
   const fetchTasks = async () => {
@@ -125,30 +125,37 @@ const styles = {
     borderRadius: "5px",
   },
 
-  addBtn: {
-    padding: "10px",
-    background: "green",
-    color: "white",
-    border: "none",
-    cursor: "pointer",
-  },
-
+  
   card: {
     border: "1px solid #ddd",
     padding: "10px",
     marginBottom: "10px",
     borderRadius: "5px",
   },
+  
+ addBtn: {
+  padding: "10px",
+  background: "#4CAF50",
+  color: "white",
+  border: "none",
+  borderRadius: "5px",
+  cursor: "pointer",
+},
 
-  completeBtn: {
-    marginRight: "10px",
-    padding: "5px",
-  },
+completeBtn: {
+  marginRight: "10px",
+  padding: "6px 10px",
+  background: "#2196F3",
+  color: "white",
+  border: "none",
+  borderRadius: "5px",
+},
 
-  deleteBtn: {
-    padding: "5px",
-    background: "red",
-    color: "white",
-    border: "none",
-  },
+deleteBtn: {
+  padding: "6px 10px",
+  background: "red",
+  color: "white",
+  border: "none",
+  borderRadius: "5px",
+},
 };
